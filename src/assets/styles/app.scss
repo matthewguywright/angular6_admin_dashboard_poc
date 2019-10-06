@@ -1,0 +1,22 @@
+// Sidenav styling
+@import '~@angular/material/theming';
+@include mat-core();
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-theme: mat-light-theme($app-primary, $app-accent);
+@include mat-core-theme($app-theme);
+@include mat-sidenav-theme($app-theme);
+//
+
+@import "scss/mixins/material-palette";
+@import "scss/mixins/skinning";
+@import "scss/variables";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import '~@angular/material/theming';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~ag-grid-community/dist/styles/ag-theme-bootstrap.css";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import '~ngx-toastr/toastr-bs4-alert';
+@import "scss/theming";
+@import "scss/custom-bootstrap";
+@import "scss/core";

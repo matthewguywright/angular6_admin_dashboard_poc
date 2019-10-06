@@ -1,0 +1,233 @@
+/* $sidebar-panel
+ ------------------------------------------*/
+mat-sidenav.sidebar-panel {
+  width: $sidebar-width;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: 50%;
+
+  app-sidebar {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .navbar-brand>svg {
+    opacity: .7;
+    height: .75rem;
+  }
+
+  .menu {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-y: overlay;
+    box-sizing: border-box;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+    margin-right: -35px;
+    padding-right: 35px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .navigation-title {
+      font-size: 80%;
+      font-weight: normal;
+      position: relative;
+      margin: 0 ($spacer*1);
+      padding: 0.469rem ($spacer*.75);
+    }
+
+    .navigation-item {
+      position: relative;
+      display: block;
+
+      &.open>a>.menu-caret {
+        transform: rotate(90deg);
+      }
+
+      &.open>.navigation-submenu {
+        max-height: 1000px;
+      }
+    }
+
+    .navigation-link {
+      position: relative;
+      margin: 0 ($spacer*1);
+      padding: 0.55rem ($spacer*.5);
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      white-space: nowrap;
+      transition: background $transition-duration, color $transition-duration;
+
+      @include hover-focus {
+        background-color: transparent;
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      [class^="ion-"]:not(.menu-caret),
+      [class*=" ion-"]:not(.menu-caret) {
+        width: 20px;
+        text-align: center;
+        line-height: 1;
+        font-size: 1.2rem;
+      }
+    }
+
+    .navigation-submenu {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      max-height: 0;
+      transition: .5s max-height ease;
+
+      a {
+        padding: .4rem $spacer .4rem 2.748rem;
+      }
+    }
+
+    .menu-caret {
+      transition: transform $transition-duration ease;
+      line-height: 16px;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    z-index: 1030;
+    width: $sidebar-width;
+
+    .menu {
+      min-width: $sidebar-width;
+    }
+  }
+
+  hr {
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+
+    .nav-link {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .mode-docked mat-sidenav.sidebar-panel {
+    .docked-visible {
+      display: block;
+      visibility: visible;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  /* Docked sidebar */
+  .app:not(.mode-docked) mat-sidenav.sidebar-panel,
+  .mode-docked mat-sidenav.sidebar-panel:hover {
+    .docked-visible {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .mode-docked {
+    .mat-drawer-backdrop {
+      display: none;
+    }
+
+    mat-sidenav.sidebar-panel~.mat-drawer-content {
+      margin-left: $sidebar-small-menu-width !important;
+    }
+
+    mat-sidenav.sidebar-panel {
+      transition: width .4s cubic-bezier(.25, .8, .25, 1), transform .4s cubic-bezier(.25, .8, .25, 1) !important;
+    }
+
+    mat-sidenav.sidebar-panel:not(:hover) {
+      width: $sidebar-small-menu-width;
+
+      .navigation-submenu,
+      .docked-hidden {
+        display: none !important;
+        visibility: hidden;
+      }
+
+      .main-brand {
+        flex-direction: column;
+
+        .navbar-brand {
+          width: 100%;
+          text-align: center;
+
+          >svg {
+            height: 1.5rem;
+          }
+        }
+      }
+
+      .menu {
+        min-width: $sidebar-small-menu-width;
+
+        .navigation-link {
+          padding-right: 0;
+          padding-left: 0;
+
+          span:not(.custom-control-label),
+          .menu-caret {
+            display: none;
+          }
+
+          [class^="ion-"]:not(.menu-caret),
+          [class*=" ion-"]:not(.menu-caret) {
+            margin: 0 !important;
+          }
+        }
+
+        .navigation-title {
+          margin: 0;
+          text-align: center;
+          display: block;
+        }
+
+        .custom-control {
+          margin: 0 auto !important;
+        }
+
+        .icon {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .sidebar-footer .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

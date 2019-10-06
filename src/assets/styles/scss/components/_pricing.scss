@@ -1,0 +1,74 @@
+@import "../mixins/material-palette";
+@import "../variables";
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+
+.pricing {
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+  text-align: center;
+
+  .card {
+    margin-left: -1px;
+  }
+
+  .plan-icon>.icon {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    display: block;
+  }
+
+  &.card-group .card+.card {
+    margin-left: -1px;
+  }
+
+  .pricing-plan {
+    text-align: center;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .plan-price {
+    font-size: 2.5rem;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .plan-price-symbol {
+    font-size: 1rem;
+    vertical-align: super;
+  }
+
+  .plan-price-period {
+    font-size: 0.8125rem;
+    display: inline-block;
+    padding: 0;
+    opacity: .7;
+  }
+
+  .plan-title {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    overflow: hidden;
+    margin-bottom: $spacer;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+  }
+
+  .plan-features {
+    line-height: 2.5;
+    margin: 0;
+    padding: .5rem;
+    list-style: none;
+
+    li {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

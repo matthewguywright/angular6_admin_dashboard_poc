@@ -1,0 +1,39 @@
+/* $widget
+ ------------------------------------------*/
+.activity-stream {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 42px;
+    bottom: 0;
+    left: ($card-spacer-x + 1.25rem);
+    width: 1px;
+    z-index: 2;
+  }
+
+  .card {
+    box-shadow: none;
+    z-index: 3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card,
+  .card-header {
+    background-color: transparent !important;
+    border: 0;
+  }
+
+  .card-header::after {
+    display: none;
+  }
+
+  .card-body {
+    padding-top: 0;
+    padding-left: 78px;
+  }
+}

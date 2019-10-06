@@ -1,0 +1,22 @@
+ngb-accordion>.card {
+  background-color: transparent;
+  margin-bottom: 5px;
+
+  .card-header {
+    border-bottom-width: 0;
+    border-radius: $border-radius;
+
+    &.active {
+      display: block;
+      border-bottom-width: 1px;
+
+      +.card-body {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

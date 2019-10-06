@@ -1,0 +1,32 @@
+/* $layout
+ ------------------------------------------*/
+
+/*Heights*/
+.min-height-100 {
+  min-height: 100vh;
+}
+
+.page-height {
+  height: calc(100vh - #{$header-height});
+}
+
+/*Scroll*/
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*Hide footer*/
+.no-footer .main-footer {
+  display: none;
+  visibility: hidden;
+}
+
+/* Boxed layout*/
+.app.mode-boxed {
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+  @include make-container-max-widths();
+}

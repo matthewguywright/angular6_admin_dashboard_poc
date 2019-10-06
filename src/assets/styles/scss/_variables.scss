@@ -1,0 +1,47 @@
+// Custom Variables
+//
+$transition-duration: 200ms !default;
+$sidebar-width: 230px !default;
+$sidebar-small-menu-width: 5rem !default;
+$header-height: 3.5rem !default;
+$header-footer-height: ($header-height * 2) !default;
+
+// Bootstrap Variables
+//
+$theme-colors: (primary: map_get($mat-indigo, 400),
+secondary: #868e96,
+success: map_get($mat-green, 400),
+info: map_get($mat-light-blue, 400),
+warning: map_get($mat-yellow, 400),
+danger: map_get($mat-red, 400),
+);
+
+$body-bg: #f2f2f7 !default;
+$body-color: rgba(0, 0, 0, 0.87) !default;
+
+$link-hover-decoration: none !default;
+
+$grid-gutter-width: 14px !default;
+
+$font-family-serif: 'Playfair Display',
+'Abril Fatface',
+Georgia,
+"Times New Roman",
+Times,
+serif !default;
+$font-family-monospace: 'Space Mono',
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+
+$font-size-base: 0.8125rem !default;
+$font-size-lg: 1rem !default;
+$font-size-sm: 0.75rem !default;
+
+$card-spacer-y: 1rem !default;
+$card-border-width: 0 !default;
+$card-border-color: rgba(black, .06) !default;
+$card-cap-bg: white !default;

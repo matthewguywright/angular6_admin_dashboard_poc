@@ -1,0 +1,149 @@
+.card {
+  margin-bottom: $grid-gutter-width;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  &.card-widget {
+    height: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    max-width: 100%;
+    padding: $spacer;
+
+    p {
+      margin: 0;
+      line-height: 1;
+    }
+  }
+
+  .card-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: transparent;
+    color: $black;
+    border: 0;
+    z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+    @if $enable-rounded {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    @else {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &.active {
+      @if $enable-rounded {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .card-header-text {
+      .card-title {
+        line-height: 1;
+      }
+
+      .card-subtitle {
+        line-height: 1;
+        font-size: 12px;
+        text-transform: initial;
+      }
+    }
+
+    .card-controls {
+      line-height: 1;
+      right: $spacer;
+
+      a {
+        position: relative;
+        font-size: rem;
+        display: inline-block;
+        margin-left: .625rem;
+        color: inherit;
+
+        i:before {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .card-footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: transparent;
+    border-top: 1px solid rgba(0, 0, 0, .05);
+
+    @if $enable-rounded {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    @else {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &[class^="card-"] .card-header,
+  &[class*=" card-"] .card-header,
+  &[class^="bg-"] .card-header,
+  &[class*=" bg-"] .card-header {
+    color: inherit;
+  }
+
+  .card-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 40px;
+    line-height: 40px;
+    margin-right: $spacer;
+
+    &.widget-icon {
+      font-size: 1rem;
+    }
+  }
+
+  .card-tab>ul {
+    padding: 1rem 1rem 0;
+  }
+
+  .card-body>*:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* $widget icon
+ ------------------------------------------*/
+.widget-icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+
+  &::before {
+    line-height: 40px;
+  }
+}
+
+.widget-bg-icon {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  line-height: 80px;
+  font-size: 60px;
+  opacity: .2;
+}

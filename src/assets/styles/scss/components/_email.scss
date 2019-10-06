@@ -1,0 +1,54 @@
+@import "../mixins/material-palette";
+@import "../variables";
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+
+:host ::ng-deep {
+  height: 100%;
+
+  ng-sidebar-container {
+    height: 100%;
+  }
+
+  .email-panel {
+    width: 300px;
+    border-right: 1px solid $card-border-color;
+  }
+
+  .messages-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    order: 2;
+    flex: 1 1 auto;
+  }
+
+  .mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .07);
+    padding: $spacer;
+  }
+
+  .list-group-item {
+    border-radius: 0 !important;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+
+    &.selected {
+      background-color: rgba(theme-color("warning"), .1);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: rgba(theme-color("warning"), .1);
+      }
+    }
+
+    a .time {
+      font-size: 10px;
+    }
+  }
+}

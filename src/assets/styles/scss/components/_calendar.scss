@@ -1,0 +1,92 @@
+@import "../mixins/material-palette";
+@import "../variables";
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+
+:host ::ng-deep {
+  .cal-month-view .cal-days {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .cal-month-view .cal-days>div:last-child .cal-cell-row {
+    border-bottom: 0;
+  }
+
+  .cal-day-view {
+    .cal-hour-rows {
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .cal-month-view {
+    .cal-open-day-events {
+      box-shadow: none;
+    }
+
+    .cal-day-number {
+      font-weight: 300;
+    }
+
+    .cal-day-badge {
+      font-weight: 400;
+    }
+  }
+
+  .cal-week-view {
+    .cal-event.cal-starts-within-week {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    .cal-event.cal-ends-within-week {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    .cal-day-headers {
+      border-left: 0;
+      border-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .cal-event-action {
+    color: currentColor;
+  }
+
+  .editButton,
+  .deleteButton {
+    background-size: cover;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    margin: 0 5px;
+
+    &:before {
+      display: inline-block;
+      font-size: 1.2rem;
+      font-family: "Ionicons";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      text-rendering: auto;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  .editButton:before {
+    content: "\f417";
+  }
+
+  .deleteButton:before {
+    content: "\f4c4";
+  }
+}
