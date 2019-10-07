@@ -1,0 +1,16 @@
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{prompt}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button"
+            class="btn btn-outline-primary"
+            (click)="activeModal.close(false)">Cancel</button>
+    <button type="button"
+            class="btn btn-primary"
+            (click)="activeModal.close(true)">OK</button>
+  </div>
+</div>

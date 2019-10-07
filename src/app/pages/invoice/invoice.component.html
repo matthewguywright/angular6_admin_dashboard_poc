@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row mb-5">
+      <div class="col">
+        <p class="mb-0">Company LLC</p>
+        <p class="mb-0">123 Fake Street</p>
+        <p class="mb-0">Email: company@address.com</p>
+        <p class="mb-0">Tel: +012 345 678 90</p>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <div class="row">
+        <div class="col">
+          <p class="mb-1"><strong>Bill to</strong></p>
+          <h5 class="fw-300 mb-3">John Smith</h5>
+
+          <p class="mb-0">1234 Main</p>
+          <p class="mb-0">Apt. 4B</p>
+          <p class="mb-0">Springfield, ST 54321</p>
+        </div>
+        <div class="col">
+          <p class="mb-1"><strong>Invoice number</strong></p>
+          <h5 class="fw-300 mb-3">#0001</h5>
+
+          <p class="mb-0">Payment due by 31 May 2016</p>
+        </div>
+      </div>
+    </div>
+
+    <ngx-datatable class="material no-shadow mb-0" [rows]="invoiceItems" [columnMode]="'flex'" [headerHeight]="38"
+      [footerHeight]="0" [rowHeight]="'auto'">
+      <ngx-datatable-column name="Description" [flexGrow]="4">
+        <ng-template ngx-datatable-cell-template let-row="row">
+          <strong>{{row.title}}</strong><br /><span class="mat-text-muted">{{row.subtitle}}</span>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Unit Price" [flexGrow]="1">
+        <ng-template ngx-datatable-cell-template let-row="row">
+          <strong>{{row.price | currency:'USD':true:'1.2-2'}}</strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Quantity" [flexGrow]="1">
+        <ng-template ngx-datatable-cell-template let-row="row">
+          <strong>{{row.quantity}}</strong>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Amount" [flexGrow]="1">
+        <ng-template ngx-datatable-cell-template let-row="row">
+          <strong>{{ (row.price * row.quantity) | currency:'USD':true:'1.2-2'}}</strong>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+
+    <div class="row">
+      <div class="col mt-1">
+        <p class="m-0"><strong>Subtotal</strong></p>
+        <h3 class="fw-100 m-0">{{getSubTotal() | currency:'USD':true:'1.2-2'}}</h3>
+      </div>
+      <div class="col mt-1 text-sm-right text-md-left">
+        <p class="m-0"><strong>Tax (15%)</strong></p>
+        <h3 class="fw-100 m-0">{{getCalculatedTax() | currency:'USD':true:'1.2-2'}}</h3>
+      </div>
+      <div class="col mt-1">
+        <p class="m-0"><strong>Discount</strong></p>
+        <h3 class="fw-100 m-0">$0.00</h3>
+      </div>
+      <div class="col mt-1 text-xs-left text-sm-right">
+        <p class="m-0"><strong>Total</strong></p>
+        <h3 class="fw-100 m-0 text-success">{{ getTotal() | currency:'USD':true:'1.2-2'}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

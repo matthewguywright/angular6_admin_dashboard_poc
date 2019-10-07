@@ -1,0 +1,68 @@
+<ng-template ngbModalContainer></ng-template>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+  </div>
+</ng-template>
+
+<div class="card overflow-hidden">
+  <div class="card-header d-flex flex-wrap justify-content-md-between no-gutters px-3 py-2">
+    <div class="col-xs-12 col-sm-6 align-self-center text-center text-sm-left">
+      <h3 class="mb-0 fw-100">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+    <div class="d-flex justify-content-end col-xs-12 col-sm-6 text-right pt-3 pt-sm-0">
+      <div class="btn-group mr-auto mr-sm-0">
+        <div class="btn btn-secondary px-3" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+          <i class="icon ion-ios-arrow-back"></i>
+        </div>
+        <div class="btn btn-secondary px-3" mwlCalendarToday [(viewDate)]="viewDate">
+          Today
+        </div>
+        <div class="btn btn-secondary px-3" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+          <i class="icon ion-ios-arrow-forward"></i>
+        </div>
+      </div>
+      <div class="dropdown btn-group ml-1" ngbDropdown placement="bottom-right">
+        <button type="button" class="btn btn-secondary px-3">View</button>
+        <button type="button" class="btn btn-secondary dropdown-toggle px-3" ngbDropdownToggle aria-haspopup="true"
+          aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div ngbDropdownMenu class="dropdown-menu" role="menu">
+          <button class="dropdown-item" (click)="view = 'month'" [class.active]="view === 'month'">Month</button>
+          <button class="dropdown-item" (click)="view = 'week'" [class.active]="view === 'week'">Week</button>
+          <button class="dropdown-item" (click)="view = 'day'" [class.active]="view === 'day'">Day</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-day-view>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+:host {
+  .icon {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: inline-block;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+  }
+
+  img {
+    height: 140px;
+  }
+}

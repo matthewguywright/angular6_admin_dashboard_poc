@@ -1,0 +1,10 @@
+:host {
+  padding: 0 !important;
+  height: 100%;
+}
+
+agm-map {
+  width: 100%;
+  height: calc(100vh - 3.5rem);
+  display: block;
+}

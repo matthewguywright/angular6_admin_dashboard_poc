@@ -1,0 +1,106 @@
+<nav class="navbar custom-navbar px-0">
+  <div class="nav navbar-nav">
+    <div class="nav-item mx-3 d-lg-none">
+      <a (click)="mailnav.toggle()" class="nav-link" href="javascript:;">
+        <i class="icon ion-navicon"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Archive">
+        <i class="icon ion-ios-albums"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Send to trash">
+        <i class="icon ion-ios-trash"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Recover message">
+        <i class="icon ion-ios-medkit"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Reply">
+        <i class="icon ion-reply"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link text-muted" container="body" placement="bottom" ngbTooltip="Reply all">
+        <i class="icon ion-reply-all"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Forward">
+        <i class="icon ion-forward"></i>
+      </a>
+    </div>
+
+    <div class="nav-item mr-3">
+      <a href="javascript:;" class="nav-link" container="body" placement="bottom" ngbTooltip="Flag">
+        <i class="icon ion-ios-flag"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<mat-sidenav-container class="page-height app-inner card card-block p-0 m-0 rounded-0 shadow-none">
+  <mat-sidenav #mailnav [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()" class="email-panel pl-xs pr-xs">
+    <div class="messages-container">
+      <div (click)="onSelect(message)" *ngFor="let message of messages; let i = index; let first = first;"
+        [class.selected]="message === selectedMessage" [ngClass]="{'border-top-0': first}" class="list-group-item list-group-item-action border-left-0 border-right-0 rounded-0 flex-column align-items-start">
+        <a class="d-flex b-b w-100" href="javascript:;">
+          <div class="mr-auto">
+            <div class="widget-icon rounded-circle bg-{{message.type ? message.type : 'black'}} text-white">{{
+              getInitials(message.from) }}</div>
+          </div>
+          <div class="pl-3">
+            <div class="d-flex w-100 justify-content-between align-items-center">
+              <small class="bold ff-headers">
+                {{message.from}}
+              </small>
+              <small class="bold text-muted time">
+                {{ message.date | date: 'MMMM d, y' }}
+              </small>
+            </div>
+            <p class="mb-0">
+              {{message.subject}}
+            </p>
+          </div>
+        </a>
+      </div>
+      <div></div>
+    </div>
+  </mat-sidenav>
+
+  <div *ngIf="selectedMessage">
+    <div class="d-flex mb-3">
+      <div class="mr-3">
+        <div class="widget-icon rounded-circle bg-{{selectedMessage.type ? selectedMessage.type : 'black'}} text-white">{{
+          getInitials(selectedMessage.from) }}</div>
+      </div>
+      <div class="pl-0">
+        <div class="date">
+          {{selectedMessage.date | date: 'fullDate'}}
+        </div>
+        <h4 class="lead mt-0">
+          {{selectedMessage.subject}}
+        </h4>
+        <small class="d-block mb-4">
+          <b>
+            {{selectedMessage.from}}
+          </b>
+          to Jeff &amp; Suzzane
+        </small>
+
+        <div [innerHtml]="selectedMessage.body"></div>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>

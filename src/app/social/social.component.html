@@ -1,0 +1,151 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-md-12 col-lg-6">
+            <figure class="mb-0">
+              <div class="text-center">
+                <img src="assets/images/wellsfargo.png" alt="Wells Fargo" class="img-fluid rounded-circle">
+              </div>
+            </figure>
+          </div>
+          <div class="col-md-12 col-lg-6 text-center text-lg-left">
+            <h5 class="mb-0"><span class="fw-200">Wells</span> <span>Fargo</span></h5>
+            <small>johndoe@wellsfargo.com</small>
+            <p class="mb-0 pb-0">District Manager</p>
+            <a href="javascript:;" class="d-block">email@wellsfargo.com</a>
+            <a href="javascript:;" class="d-block">www.wellsfargo.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col">
+            <h2 class="mt-0 fw-300"><b>23,8K</b></h2>
+            <small>Holdings</small>
+          </div>
+          <div class="col">
+            <h2 class="mt-0 fw-300"><b>569</b></h2>
+            <small>Portfolios</small>
+          </div>
+          <div class="col">
+            <h2 class="mt-0 fw-300"><b>67</b></h2>
+            <small>Clients</small>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>Wells Fargo is a great company and client.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="card">
+      <ngb-tabset class="card-tab">
+        <ngb-tab title="Recent Activity">
+          <ng-template ngbTabContent>
+            <div class="activity-stream">
+              <div class="card">
+                <div class="card-header">
+                  <img class="card-avatar" src="assets/images/face1.jpg">
+                  <div class="card-header-text">
+                    <div class="card-title">Added User Joel</div>
+                    <div class="card-subtitle">Admin</div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <img class="card-avatar" src="assets/images/avatar.jpg">
+                  <div class="card-header-text">
+                    <div class="card-title">Description Change</div>
+                    <div class="card-subtitle">John Doe</div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>Wells Fargo is a great company and client.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header">
+                  <img class="card-avatar" src="assets/images/face2.jpg">
+                  <div class="card-header-text">
+                    <div class="card-title">Updated Logo</div>
+                    <div class="card-subtitle">Added a photo</div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="media-tile media-tile-footer">
+                    <figure style="width: 300px">
+                      <img src="assets/images/wellsfargo.png" alt="Wells Fargo" class="img-fluid" />
+                      <figcaption>
+                        <h6 class="media-title fw-300">Photo</h6>
+                        <small class="media-subtitle">Photo Image</small>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Edit">
+          <ng-template ngbTabContent>
+            <form>
+              <div class="p-3">
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="company" class="col-form-label">Company</label>
+                    <input type="text" class="form-control" id="company" value="Wells Fargo" disabled>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="fname" class="col-form-label">First name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="First name">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="lname" class="col-form-label">Last name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Last name">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4" class="col-form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4" class="col-form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="address" class="col-form-label">Address</label>
+                  <textarea class="form-control" id="address" placeholder="1234 Main St"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="address2" class="col-form-label">Address 2</label>
+                  <textarea class="form-control" id="address2" placeholder="Apartment, studio, or floor"></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="city" class="col-form-label">City</label>
+                    <input type="text" class="form-control" id="city" placeholder="City">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="state" class="col-form-label">State</label>
+                    <select id="state" class="form-control"></select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="zip" class="col-form-label">Zip</label>
+                    <input type="text" class="form-control" id="zip" placeholder="ZIP Code">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+              </div>
+            </form>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>

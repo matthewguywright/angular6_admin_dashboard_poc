@@ -1,0 +1,27 @@
+@import "../../assets/styles/scss/components/email";
+
+:host {
+  padding: 0 !important;
+
+  .custom-navbar {
+    min-height: 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid $card-border-color;
+
+    .nav-link {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .page-height {
+    height: calc(100vh - #{$header-height + 2.75rem});
+  }
+
+  .messages-container .widget-icon {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+  }
+}
