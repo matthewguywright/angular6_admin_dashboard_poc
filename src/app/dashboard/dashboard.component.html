@@ -1,0 +1,225 @@
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header d-block">
+        <p class="mb-0">COVISUM</p>
+        <small class="d-block text-muted">www.covisum.com</small>
+      </div>
+      <div class="card-body px-0 py-4 rounded-bottom">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col text-center">
+              <a href="#" target="_blank">
+                <span class="fa fa-fw fa-2x fa-facebook"></span>
+              </a>
+            </div>
+            <div class="col text-center">
+              <a href="#" target="_blank">
+                <span class="fa fa-fw fa-2x fa-twitter"></span>
+              </a>
+            </div>
+            <div class="col text-center">
+              <a href="#" target="_blank">
+                <span class="fa fa-fw fa-2x fa-youtube"></span>
+              </a>
+            </div>
+            <div class="col text-center">
+              <a href="#" target="_blank">
+                <span class="fa fa-fw fa-2x fa-reddit"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>Tax Clarity version 3.4 is Coming Soon!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header d-block">
+        <p class="mb-0">2018 vs 2019 Tax Return</p>
+        <small class="d-block text-muted">Line Chart Analytics</small>
+      </div>
+      <div class="card-body px-0 py-4 rounded-bottom">
+        <div>
+          <ngx-charts-line-chart class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType" [results]="dateDataWithOrWithoutRange"
+            [legend]="showLegend" (legendLabelClick)="onLegendLabelClick($event)" [gradient]="gradient" [xAxis]="showXAxis"
+            [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [autoScale]="autoScale"
+            [timeline]="timeline" [showGridLines]="showGridLines" [curve]="curve" [rangeFillOpacity]="rangeFillOpacity"
+            [roundDomains]="roundDomains" [tooltipDisabled]="true" (select)="select($event)">
+          </ngx-charts-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header d-block">
+        <p class="mb-0">Cash Holdings</p>
+        <small class="d-block text-muted">Stacked Area Chart Analytics</small>
+      </div>
+      <div class="card-body px-0 py-4  rounded-bottom">
+        <div>
+          <ngx-charts-area-chart-stacked class="chart-container" [scheme]="colorScheme" [schemeType]="schemeType"
+            [results]="dateData" [legend]="showLegend" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis"
+            (legendLabelClick)="onLegendLabelClick($event)" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [showGridLines]="showGridLines"
+            [roundDomains]="roundDomains" [tooltipDisabled]="tooltipDisabled" [curve]="curve" (select)="select($event)">
+          </ngx-charts-area-chart-stacked>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header">My Products</div>
+      <ul class="list-group">
+        <li class="list-group-item rounded-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <div class="card-avatar widget-icon rounded-circle bg-red text-white fa fa-usd"></div>
+            </a>
+            <div class="pl-3">
+              <span>
+                  <a href="#" class="btn btn-outline-success">10 Day Free Trial</a>&nbsp;
+                  <a href="#" class="btn btn-success">Subscribe</a>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <div class="card-avatar widget-icon rounded-circle bg-orange text-white fa fa-credit-card"></div>
+            </a>
+            <div class="pl-3">
+              <span>
+                Subscribed (Monthly)
+              </span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item rounded-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <div class="card-avatar widget-icon rounded-circle bg-green text-white fa fa-youtube"></div>
+            </a>
+            <div class="pl-3">
+              <a class="d-block" href="javascript:;">
+                Trial expires on November, 12, 2019
+              </a>
+              <span>
+                <div class="btn-group">
+                  <a href="#" class="btn btn-outline-success">Subscribe</a>
+                </div>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item rounded-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <div class="card-avatar widget-icon rounded-circle bg-blue text-white fa fa-bar-chart"></div>
+            </a>
+            <div class="pl-3">
+              <span>
+                  <a href="#" class="btn btn-outline-success">10 Day Free Trial</a>&nbsp;
+                  <a href="#" class="btn btn-success">Subscribe</a>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header">Training</div>
+      <div class="activity-stream  pt-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-avatar widget-icon rounded-circle bg-red text-white fa fa-youtube"></div>
+            <div class="card-header-text">
+              <div class="card-title">Tax Clarity Add Client</div>
+              <div class="card-subtitle">Tax Clarity</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-avatar widget-icon rounded-circle bg-orange text-white fa fa-credit-card"></div>
+            <div class="card-header-text">
+              <div class="card-title">SmartRisk Assertions</div>
+              <div class="card-subtitle">SmartRisk</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-avatar widget-icon rounded-circle bg-blue text-white fa fa-bar-chart"></div>
+            <div class="card-header-text">
+              <div class="card-title">Social Security Timing Users</div>
+              <div class="card-subtitle">SST</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card">
+      <div class="card-header">Latest News + Updates</div>
+      <ul class="list-group border-0">
+        <li class="list-group-item border-0 rounded-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <img class="img-fluid rounded-circle" src="assets/images/ssa.png" />
+            </a>
+            <div class="pl-3">
+              <span class="d-block">
+                Donec ullamcorper nulla non metus auctor fringilla.
+              </span>
+              <small class="text-muted">
+                Yesterday
+              </small>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item border-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <img class="img-fluid rounded-circle" src="assets/images/ssa.png" />
+            </a>
+            <div class="pl-3">
+              <span class="d-block">
+                Donec ullamcorper nulla non metus auctor fringilla.
+              </span>
+              <small class="text-muted">
+                Yesterday
+              </small>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item border-0 rounded-0 ">
+          <div class="d-flex align-items-center">
+            <a class="pull-left avatar-sm" href="javascript:;">
+              <img class="img-fluid rounded-circle" src="assets/images/ssa.png">
+            </a>
+            <div class="pl-3">
+              <span class="d-block">
+                Donec ullamcorper nulla non metus auctor fringilla.
+              </span>
+              <small class="text-muted">
+                Yesterday
+              </small>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="card-footer">Last updated 20 seconds ago</div>
+    </div>
+  </div>
+</div>

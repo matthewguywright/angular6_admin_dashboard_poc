@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <a [routerLink]="['/clients/add-client']" class="btn btn-primary">
+          <span class="fa fa-plus fa-fw fa-lg"></span> Add Client
+        </a>
+        <a (click)="exportExcel(clientGrid)" class="btn btn-primary ml-2">
+          <span class="fa fa-file-excel-o fa-fw fa-lg"></span> Export Excel
+        </a>
+        <a (click)="sstApi()" class="btn btn-primary ml-2">
+          <span class="fa fa-external-link fa-fw fa-lg"></span> SST API
+        </a>
+      </div>
+      <div class="card-body">
+        <ag-grid-angular
+          #clientGrid
+          id="clientGrid"
+          style="width: 100%; height: 500px;"
+          class="ag-theme-bootstrap"
+          [rowData]="rowData"
+          [floatingFilter]="true"
+          [columnDefs]="columnDefs"
+          [defaultColDef]="defaultColDef"
+          [pagination]="true"
+          [paginationAutoPageSize]="true"
+          rowSelection="single"
+          (firstDataRendered)="onFirstDataRendered($event)"
+          (gridReady)="onGridReady($event)"
+        >
+        </ag-grid-angular>
+      </div>
+    </div>
+  </div>
+</div>

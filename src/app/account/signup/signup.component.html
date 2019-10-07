@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center align-items-center min-height-100 h-100">
+  <div class="auth-container">
+    <div class="card card-body m-3 p-5">
+      <h3 class="fw-100 text-success mb-4">Create your account</h3>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <fieldset class="form-group">
+          <input type="text" class="form-control" placeholder="Choose a username" [formControl]="form.controls['uname']"
+            [ngClass]="{'is-invalid': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
+          <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username
+            is required.</div>
+        </fieldset>
+        <fieldset class="form-group">
+          <input type="password" class="form-control" placeholder="Password" [formControl]="form.controls['password']"
+            [ngClass]="{'is-invalid': form.controls['password'].hasError('required') && form.controls['password'].touched}" />
+          <div class="invalid-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Password
+            is required.</div>
+        </fieldset>
+        <fieldset class="form-group">
+          <input type="password" class="form-control" placeholder="Confirm password" [formControl]="form.controls['confirmPassword']"
+            [ngClass]="{'is-invalid': form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched}" />
+          <div class="invalid-feedback" *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched">Confirm
+            your password.</div>
+        </fieldset>
+        <div class="d-flex justify-content-center mt-4 mb-4">
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Create account</button>
+        </div>
+        <div class="text-center">
+          <p>Already have an account? <a [routerLink]="['/account/signin']">Login Now!</a></p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="bg-cover"></div>
+</div>

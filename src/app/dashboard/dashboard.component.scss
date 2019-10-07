@@ -1,0 +1,11 @@
+:host ::ng-deep {
+  .chart-container {
+    height: 170px;
+    width: 100%;
+    display: block;
+  }
+
+  .ngx-charts .gridline-path {
+    stroke-width: 0.5;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center min-height-100 h-100">
+  <div class="auth-container">
+    <div class="card card-body m-3 p-5">
+      <h3 class="fw-100 text-success mb-4">Recover your password</h3>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <fieldset class="form-group">
+          <input type="text" class="form-control" placeholder="Username" [formControl]="form.controls['uname']"
+            [ngClass]="{'is-invalid': form.controls['uname'].hasError('required') && form.controls['uname'].touched}" />
+          <div class="invalid-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Username
+            is required.</div>
+        </fieldset>
+        <div class="d-flex justify-content-center mt-4 mb-4">
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Reset password</button>
+        </div>
+        <div class="text-center">
+          <p>Don't have an account? <a [routerLink]="['/account/signup']">Create one now!</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="bg-cover"></div>
+</div>
