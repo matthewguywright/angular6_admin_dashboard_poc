@@ -1,0 +1,22 @@
+<ngx-loading-bar></ngx-loading-bar>
+<mat-sidenav-container class="app" [ngClass]="{
+  'mode-boxed': options.boxed,
+  'mode-docked': options.docked,
+  'theme-winter': options.theme === 'winter',
+  'theme-spring': options.theme === 'spring',
+  'theme-autumn': options.theme === 'autumn',
+  'theme-summer': options.theme === 'summer',
+  'theme-eclipse': options.theme === 'eclipse',
+  'no-footer': routeOptions?.removeFooter}">
+  <mat-sidenav class="sidebar-panel" #sidemenu id="sidebar-panel" [mode]="isOver() ? 'over' : 'side'" [opened]="!isOver()">
+    <app-sidebar (messageEvent)="receiveMessage($event)" (toggleFullscreen)="toggleFullscreen()" class="bg-cover"></app-sidebar>
+  </mat-sidenav>
+
+  <app-header (toggleSidenav)="sidemenu.toggle()" [heading]="routeOptions.heading"></app-header>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+
+</mat-sidenav-container>
